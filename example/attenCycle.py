@@ -6,22 +6,20 @@ import time
 import lwautils.lwa_arx as arx
 import lwautils.ArxException as arxe
 
-ma = arx.ARX()
+M_ARX = arx.ARX()
 
-arxChanCfg = {}
-arxChanCfg["dc_on"] = True
-arxChanCfg["sig_on"] = True
-arxChanCfg["narrow_lpf"] = True
-arxChanCfg["narrow_hpf"] = True
+ARX_CHAN_CFG = {}
+ARX_CHAN_CFG["dc_on"] = True
+ARX_CHAN_CFG["sig_on"] = True
+ARX_CHAN_CFG["narrow_lpf"] = True
+ARX_CHAN_CFG["narrow_hpf"] = True
 
-for ia in range(0,63):
-    arxChanCfg["first_atten"] = ia * 0.5
-    arxChanCfg["second_atten"] = ia * 0.5
+for ia in range(0, 63):
+    ARX_CHAN_CFG["first_atten"] = ia * 0.5
+    ARX_CHAN_CFG["second_atten"] = ia * 0.5
     try:
-        ma.set_chan_cfg(2, 0, arxChanCfg)
+        M_ARX.set_chan_cfg(2, 0, ARX_CHAN_CFG)
         # Sleep for 10 seconds
         time.sleep(10.0)
-    except arxe.ArxException ae::
-        print(ae)
-    
-
+    except arxe.ArxException as arx_ex:
+        print(arx_ex)
