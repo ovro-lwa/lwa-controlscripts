@@ -3,7 +3,7 @@
 """
 
 import time
-import lwa_utils.lwa_arx as arx
+import lwautils.lwa_arx as arx
 import lwautils.ArxException as arxe
 
 ma = arx.ARX()
