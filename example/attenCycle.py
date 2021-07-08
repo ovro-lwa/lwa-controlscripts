@@ -14,7 +14,7 @@ ARX_CHAN_CFG["sig_on"] = True
 ARX_CHAN_CFG["narrow_lpf"] = True
 ARX_CHAN_CFG["narrow_hpf"] = True
 
-for ia in range(0, 63):
+for ia in range(58, 63):
     ARX_CHAN_CFG["first_atten"] = ia * 0.5
     ARX_CHAN_CFG["second_atten"] = ia * 0.5
     try:
